@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include <string>
-#include <vector>
+
 
 
 
@@ -28,13 +27,22 @@ void MainWindow::on_pushButton_clicked()
         ui->textBrowser->insertPlainText(QString::fromStdString("Input langeage."));
         return;
     }
+    std::string table_name;
+    if ( language == "C++" ){
+        table_name = "default.cpp_signatures";
+    }
+    
     std::string inp = ui->textEdit->toPlainText().toStdString();
     std::string punct = parse_file(inp);
+    
     size_t ngram_size = 3;
+    size_t function_count = 100;
+    
     std::vector<std::string> ngrams = make_ngrams(punct, ngram_size);
-
-
-
+    std::vector<std::string> min_hashed = get_hashes(ngrams, ngram_size, function_count);
+    
+    
+    
 
     ui->textBrowser->insertPlainText(QString::fromStdString(punct));
 
@@ -62,7 +70,7 @@ std::string MainWindow::parse_file(const std::string &inp) {
     return out;
 }
 
-std::vector<std::string> MainWindow::make_ngrams(const std::string& sequence, size_t ngram_size){
+std::vector<std::string> MainWindow::make_ngrams(const std::string& sequence, size_t ngram_size) {
     size_t n = sequence.size();
     if (n <  ngram_size){
         return std::vector<std::string>(0);
@@ -82,3 +90,28 @@ std::vector<std::string> MainWindow::make_ngrams(const std::string& sequence, si
     }
     return ngrams;
 }
+
+std::vector<std::string> MainWindow::get_hashes(const std::vector<std::string>& ngrams, size_t ngram_size, size_t function_count) {
+    std::vector<std::string> minhashes(function_count);
+    for (size_t hash_number = 0; hash_number < function_count; hash_number++) {
+        for (const std::string &item: ngrams) {
+            std::string itemHash = sip128(item + std::to_string(hash_number), ngram_size + 1);
+            if (minhashes[hash_number].empty() || item < minhashes[hash_number]) {
+                minhashes[hash_number] = itemHash;
+            }
+        }
+    }
+    return minhashes;
+}
+
+std::string MainWindow::sip128(const std::string &input, size_t size) {
+    std::string get_query = "SELECT hex(sipHash128('" + input + "', '\\x01', " + std::to_string(size) + " )) ;";
+    std::string out;
+    client_.Select(get_query, [&](const clickhouse::Block &block) {
+        if (block.GetColumnCount() > 0 && block.GetRowCount() > 0) {
+            out = std::string(block[0]->As<clickhouse::ColumnFixedString>()->At(0));
+        }
+    });
+    return out;
+}
+

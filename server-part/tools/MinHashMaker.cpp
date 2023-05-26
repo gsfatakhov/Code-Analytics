@@ -46,7 +46,7 @@ void MinHashMaker::make_signature(const std::string &from_table, const std::stri
             for (size_t hash_number = 0; hash_number < function_count; hash_number++) {
                 std::string min_hash;
                 for (const std::string &item: ngrams) {
-                    std::string itemHash = sip128(item + std::to_string(i), &sender, ngram_size + 1);
+                    std::string itemHash = sip128(item + std::to_string(hash_number), &sender, ngram_size + 1);
                     if (min_hash.empty() || item < min_hash) {
                         min_hash = itemHash;
                     }
