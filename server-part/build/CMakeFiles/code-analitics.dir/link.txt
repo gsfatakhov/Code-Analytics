@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/code-analitics.dir/main.cpp.o -o code-analitics  contribs/clickhouse-cpp/clickhouse/libclickhouse-cpp-lib.a contribs/clickhouse-cpp/contrib/absl/absl/libabsl_int128.a contribs/clickhouse-cpp/contrib/cityhash/cityhash/libcityhash.a contribs/clickhouse-cpp/contrib/lz4/lz4/liblz4.a 

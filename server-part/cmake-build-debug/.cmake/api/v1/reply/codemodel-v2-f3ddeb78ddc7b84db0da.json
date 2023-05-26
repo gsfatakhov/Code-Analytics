@@ -1,0 +1,226 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "contribs/clickhouse-cpp",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-contribs.clickhouse-cpp-Debug-34ef5441a10b20bbb107.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "contribs/clickhouse-cpp",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						7
+					]
+				},
+				{
+					"build" : "contribs/clickhouse-cpp/contrib/absl/absl",
+					"jsonFile" : "directory-contribs.clickhouse-cpp.contrib.absl.absl-Debug-ecfca58d5b2feaffdc0e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "contribs/clickhouse-cpp/contrib/absl/absl",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "contribs/clickhouse-cpp/contrib/lz4/lz4",
+					"jsonFile" : "directory-contribs.clickhouse-cpp.contrib.lz4.lz4-Debug-d557341acc61e7e860d8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "contribs/clickhouse-cpp/contrib/lz4/lz4",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "contribs/clickhouse-cpp/contrib/cityhash/cityhash",
+					"jsonFile" : "directory-contribs.clickhouse-cpp.contrib.cityhash.cityhash-Debug-6f22f4d762171966d539.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "contribs/clickhouse-cpp/contrib/cityhash/cityhash",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "contribs/clickhouse-cpp/clickhouse",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-contribs.clickhouse-cpp.clickhouse-Debug-1d6971e85ea78e02623d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "contribs/clickhouse-cpp/clickhouse",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "code-analytics",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "CLICKHOUSE-CLIENT",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "absl__int128_print_debug_info::@54c7e40b0fcb5e65fed3",
+					"jsonFile" : "target-absl__int128_print_debug_info-Debug-e1b64fe7ca99ab46308b.json",
+					"name" : "absl__int128_print_debug_info",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "absl_int128::@7062576131edd5e3179c",
+					"jsonFile" : "target-absl_int128-Debug-29fead0a5ff125e2ca71.json",
+					"name" : "absl_int128",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "cityhash::@495ea938c940aa8f8577",
+					"jsonFile" : "target-cityhash-Debug-e5fd59362a6102e517b9.json",
+					"name" : "cityhash",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "cityhash__cityhash_print_debug_info::@54c7e40b0fcb5e65fed3",
+					"jsonFile" : "target-cityhash__cityhash_print_debug_info-Debug-3b06a90f73fcac4c786e.json",
+					"name" : "cityhash__cityhash_print_debug_info",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "clickhouse-cpp-lib::@304bebd3a7db4f94303a",
+					"jsonFile" : "target-clickhouse-cpp-lib-Debug-d89cf21c032cfbc23c8c.json",
+					"name" : "clickhouse-cpp-lib",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "code-analytics::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-code-analytics-Debug-562793e8b8d716270882.json",
+					"name" : "code-analytics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "lz4::@e0800d131d7380e393a4",
+					"jsonFile" : "target-lz4-Debug-1f582e6d87cb72e9a3aa.json",
+					"name" : "lz4",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "lz4__lz4_print_debug_info::@54c7e40b0fcb5e65fed3",
+					"jsonFile" : "target-lz4__lz4_print_debug_info-Debug-e36768da58923e571e51.json",
+					"name" : "lz4__lz4_print_debug_info",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/georgijfatahov/clickhouse-app/cmake-build-debug",
+		"source" : "/Users/georgijfatahov/clickhouse-app"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

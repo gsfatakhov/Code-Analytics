@@ -1,0 +1,28 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja /Users/georgijfatahov/clickhouse-app
+absl::int128 properties:
+	INCLUDE_DIRECTORIES : /Users/georgijfatahov/clickhouse-app/contribs/clickhouse-cpp/contrib/absl;/Users/georgijfatahov/clickhouse-app/contribs/clickhouse-cpp/contrib/absl
+	BINARY_DIR : /Users/georgijfatahov/clickhouse-app/cmake-build-debug/contribs/clickhouse-cpp/contrib/absl/absl
+	INTERFACE_INCLUDE_DIRECTORIES : /Users/georgijfatahov/clickhouse-app/contribs/clickhouse-cpp/contrib/absl
+	INTERFACE_LINK_LIBRARIES : PROPERTY-NOTFOUND
+	LINK_LIBRARIES : PROPERTY-NOTFOUND
+	LINK_LIBRARIES_ONLY_TARGETS : PROPERTY-NOTFOUND
+	IMPORTED_LOCATION : PROPERTY-NOTFOUND
+cityhash::cityhash properties:
+	INCLUDE_DIRECTORIES : /Users/georgijfatahov/clickhouse-app/contribs/clickhouse-cpp/contrib/absl;/Users/georgijfatahov/clickhouse-app/contribs/clickhouse-cpp/contrib/lz4/lz4;/Users/georgijfatahov/clickhouse-app/contribs/clickhouse-cpp/contrib/cityhash/cityhash
+	BINARY_DIR : /Users/georgijfatahov/clickhouse-app/cmake-build-debug/contribs/clickhouse-cpp/contrib/cityhash/cityhash
+	INTERFACE_INCLUDE_DIRECTORIES : PROPERTY-NOTFOUND
+	INTERFACE_LINK_LIBRARIES : PROPERTY-NOTFOUND
+	LINK_LIBRARIES : PROPERTY-NOTFOUND
+	LINK_LIBRARIES_ONLY_TARGETS : PROPERTY-NOTFOUND
+	IMPORTED_LOCATION : PROPERTY-NOTFOUND
+lz4::lz4 properties:
+	INCLUDE_DIRECTORIES : /Users/georgijfatahov/clickhouse-app/contribs/clickhouse-cpp/contrib/absl;/Users/georgijfatahov/clickhouse-app/contribs/clickhouse-cpp/contrib/lz4/lz4
+	BINARY_DIR : /Users/georgijfatahov/clickhouse-app/cmake-build-debug/contribs/clickhouse-cpp/contrib/lz4/lz4
+	INTERFACE_INCLUDE_DIRECTORIES : PROPERTY-NOTFOUND
+	INTERFACE_LINK_LIBRARIES : PROPERTY-NOTFOUND
+	LINK_LIBRARIES : PROPERTY-NOTFOUND
+	LINK_LIBRARIES_ONLY_TARGETS : PROPERTY-NOTFOUND
+	IMPORTED_LOCATION : PROPERTY-NOTFOUND
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/georgijfatahov/clickhouse-app/cmake-build-debug

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "contribs/clickhouse-cpp/contrib/cityhash/cityhash",
+		"source" : "contribs/clickhouse-cpp/contrib/cityhash/cityhash"
+	}
+}

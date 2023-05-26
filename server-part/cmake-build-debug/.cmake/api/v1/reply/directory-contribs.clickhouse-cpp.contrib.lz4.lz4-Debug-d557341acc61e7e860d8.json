@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "contribs/clickhouse-cpp/contrib/lz4/lz4",
+		"source" : "contribs/clickhouse-cpp/contrib/lz4/lz4"
+	}
+}

@@ -1,0 +1,685 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"INSTALL"
+		],
+		"files" : 
+		[
+			"contribs/clickhouse-cpp/clickhouse/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 79,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 85,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 86,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 87,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 88,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 89,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 90,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 91,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 94,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 95,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 96,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 97,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 98,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 99,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 100,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 101,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 102,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 103,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 104,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 105,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 106,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 109,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 110,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 111,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 112,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 113,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 114,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 115,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 116,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 117,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 118,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 119,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 120,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 121,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 122,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 123,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 124,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 125,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 126,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 129,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 130,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/libclickhouse-cpp-lib.a"
+			],
+			"targetId" : "clickhouse-cpp-lib::@304bebd3a7db4f94303a",
+			"targetIndex" : 4,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/block.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/client.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/error_codes.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/exceptions.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/server_exception.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/protocol.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 8,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/query.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 9,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/buffer.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 10,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/compressed.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 11,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/input.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 12,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 13,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/output.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 14,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/platform.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 15,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/projected_iterator.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 16,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/singleton.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 17,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/socket.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 18,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/string_utils.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 19,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/string_view.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 20,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/uuid.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 21,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/base",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/base/wire_format.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 22,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/array.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 23,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/column.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 24,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/date.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 25,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/decimal.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 26,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/enum.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 27,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/factory.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 28,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/geo.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 29,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/ip4.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 30,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/ip6.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 31,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/itemview.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 32,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/lowcardinality.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 33,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/nullable.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 34,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/numeric.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 35,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/map.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 36,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/string.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 37,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/tuple.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 38,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/utils.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 39,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/columns",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/columns/uuid.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 40,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/types",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/types/type_parser.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 41,
+			"component" : "Unspecified",
+			"destination" : "include/clickhouse/types",
+			"paths" : 
+			[
+				"contribs/clickhouse-cpp/clickhouse/types/types.h"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "contribs/clickhouse-cpp/clickhouse",
+		"source" : "contribs/clickhouse-cpp/clickhouse"
+	}
+}
