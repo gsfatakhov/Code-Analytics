@@ -12,12 +12,11 @@ void MinHashMaker::make_signature(const std::string &from_table, const std::stri
         std::string query = "CREATE TABLE IF NOT EXISTS " + to_table + " ( Location VARCHAR, ";
 
         // Добавление столбцов
-        for (int i = 1; i < function_count; ++i) {
-            query += "hash_" + std::to_string(i) + " FixedString(16),";
+        for (int i = 1; i < function_count; i++) {
+            query += "hash_" + std::to_string(i) + " FixedString(32),";
         }
-        query += "hash_" + std::to_string(function_count) + " FixedString(16)) ";
+        query += "hash_" + std::to_string(function_count) + " FixedString(32)) ";
         query += "ENGINE = MergeTree() ORDER BY Location ;";
-
         client_.Execute(query);
     }
     catch (const std::exception &e) {
@@ -27,11 +26,11 @@ void MinHashMaker::make_signature(const std::string &from_table, const std::stri
 
     clickhouse::Client sender(this->options_);
 
-    std::string begining = "INSERT INTO " + to_table + " ( Location VARCHAR, ";
+    std::string begining = "INSERT INTO " + to_table + " ( Location, ";
     for (int i = 1; i < function_count; ++i) {
         begining += "hash_" + std::to_string(i) + ",";
     }
-    begining += "hash_" + std::to_string(function_count) + " ) VALUES (";
+    begining += "hash_" + std::to_string(function_count) + " ) VALUES (\'";
 
     size_t counter = 0;
     size_t ngram_size = 3;
@@ -42,7 +41,7 @@ void MinHashMaker::make_signature(const std::string &from_table, const std::stri
             std::string sequence = std::string(block[1]->As<clickhouse::ColumnString>()->At(i));
             std::vector<std::string> ngrams = make_ngrams(sequence, ngram_size);
 
-            std::string vals;
+            std::string vals = path + "\', \'";
             for (size_t hash_number = 0; hash_number < function_count; hash_number++) {
                 std::string min_hash;
                 for (const std::string &item: ngrams) {
@@ -53,11 +52,10 @@ void MinHashMaker::make_signature(const std::string &from_table, const std::stri
                 }
                 vals += min_hash;
                 if (hash_number != function_count - 1) {
-                    vals += ", ";
+                    vals += "\', \'";
                 }
             }
-            vals += ");";
-
+            vals += "\');";
             sender.Execute(begining + vals);
 
             counter++;
@@ -70,11 +68,11 @@ void MinHashMaker::make_signature(const std::string &from_table, const std::stri
 std::vector<std::string> MinHashMaker::make_ngrams(const std::string &sequence, size_t ngram_size) {
     size_t n = sequence.size();
 
-    if (n <  ngram_size){
+    if (n < ngram_size) {
         return std::vector<std::string>(0);
     }
 
-    std::vector<std::string> ngrams;
+    std::vector<std::string>ngrams;
     ngrams.reserve(n - ngram_size + 1);
 
     for (size_t i = 0; i < n - ngram_size + 1; ++i) {
@@ -96,7 +94,7 @@ std::string MinHashMaker::sip128(const std::string &input, clickhouse::Client *s
     std::string out;
     sender->Select(get_query, [&](const clickhouse::Block &block) {
         if (block.GetColumnCount() > 0 && block.GetRowCount() > 0) {
-            out = std::string(block[0]->As<clickhouse::ColumnFixedString>()->At(0));
+            out = std::string(block[0]->As<clickhouse::ColumnString>()->At(0));
         }
     });
     return out;
