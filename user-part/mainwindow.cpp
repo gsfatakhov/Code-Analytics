@@ -29,12 +29,15 @@ void MainWindow::on_pushButton_clicked()
     }
     std::string table_name;
     if ( language == "C++" ){
-        table_name = "default.cpp_signatures";
+        table_name = "default.cpp_signature";
     } else if ( language == "Python3" ){
-        table_name = "default.python3_signatures";
+        table_name = "default.python3_signature";
     }
 
     double aim_equality = ui->equality->value() / 100.;
+    ui->textBrowser->insertPlainText(QString::fromStdString("Searching " + std::to_string(ui->equality->value())
+                                                            + "% equality in " + language + " language.\n"));
+
 
     std::string inp = ui->textEdit->toPlainText().toStdString();
     std::string punct = parse_file(inp);
@@ -47,16 +50,19 @@ void MainWindow::on_pushButton_clicked()
     try {
         std::string get_query = "SELECT * FROM " + table_name + " ;";
         client_.Select(get_query, [&](const clickhouse::Block &block) {
+            if (block.GetRowCount() == 0 || block.GetColumnCount() == 0) {
+                return;
+            }
             for (size_t i = 0; i < block.GetRowCount(); ++i) {
                 double equal_hashes = 0;
                 std::string path = std::string(block[0]->As<clickhouse::ColumnString>()->At(i));
-                for (size_t hash_nubmer = 1; hash_nubmer < function_count; hash_nubmer++) {
-                    std::string hash = std::string(block[hash_nubmer]->As<clickhouse::ColumnFixedString>()->At(i));
+                for (size_t hash_nubmer = 1; hash_nubmer <= function_count; hash_nubmer++) {
+                    std::string hash = std::string(block[hash_nubmer]->As<clickhouse::ColumnString>()->At(i));
                     if (hash == min_hashes[hash_nubmer]) {
                         equal_hashes++;
                     }
                 }
-                double equality =  equal_hashes / ( double ) function_count;
+                double equality = equal_hashes / ( double ) function_count;
                 if (equality >= aim_equality) {
                     path += " equality (%): ";
                     path += std::to_string(round(equality * 10000) /100);
@@ -67,9 +73,8 @@ void MainWindow::on_pushButton_clicked()
         });
     }
     catch (...) {
-        ui->textBrowser->insertPlainText(QString::fromStdString("Unable to connect to table."));
+        ui->textBrowser->insertPlainText(QString::fromStdString("Error while working with table."));
     }
-    ui->textEdit->clear();
 }
 
 std::string MainWindow::parse_file(const std::string &inp) {
@@ -124,7 +129,7 @@ std::string MainWindow::sip128(const std::string &input, size_t size) {
     std::string out;
     client_.Select(get_query, [&](const clickhouse::Block &block) {
         if (block.GetColumnCount() > 0 && block.GetRowCount() > 0) {
-            out = std::string(block[0]->As<clickhouse::ColumnFixedString>()->At(0));
+            out = std::string(block[0]->As<clickhouse::ColumnString>()->At(0));
         }
     });
     return out;
