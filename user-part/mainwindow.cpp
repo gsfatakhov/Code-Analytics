@@ -6,9 +6,9 @@
 
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow),
-    client_(clickhouse::ClientOptions().SetHost("localhost")) //указываем Host и Port нужной нам бд
+        : QMainWindow(parent)
+        , ui(new Ui::MainWindow),
+          client_(clickhouse::ClientOptions().SetHost("localhost")) //указываем Host и Port нужной нам бд
 {
     ui->setupUi(this);
 }
@@ -24,36 +24,51 @@ void MainWindow::on_pushButton_clicked()
     ui->textBrowser->clear();
     std::string language = ui->lang->currentText().toStdString();
     if (language == "--"){
-        ui->textBrowser->insertPlainText(QString::fromStdString("Input langeage."));
+        ui->textBrowser->insertPlainText(QString::fromStdString("Enter language."));
         return;
     }
     std::string table_name;
     if ( language == "C++" ){
         table_name = "default.cpp_signatures";
+    } else if ( language == "Python3" ){
+        table_name = "default.python3_signatures";
     }
-    
+
+    double aim_equality = ui->equality->value() / 100.;
+
     std::string inp = ui->textEdit->toPlainText().toStdString();
     std::string punct = parse_file(inp);
-    
+
     size_t ngram_size = 3;
     size_t function_count = 100;
-    
+
     std::vector<std::string> ngrams = make_ngrams(punct, ngram_size);
-    std::vector<std::string> min_hashed = get_hashes(ngrams, ngram_size, function_count);
-    
-    
-    
-
-    ui->textBrowser->insertPlainText(QString::fromStdString(punct));
-
-    /*for (char i : inp) {
-        std::string out = "";
-        out += i;
-        out += '\n';
-        ui->textBrowser->insertPlainText(QString::fromStdString(out));
-        ui->textBrowser->insertPlainText(ui->lang->currentText());
-
-    }*/
+    std::vector<std::string> min_hashes = get_hashes(ngrams, ngram_size, function_count);
+    try {
+        std::string get_query = "SELECT * FROM " + table_name + " ;";
+        client_.Select(get_query, [&](const clickhouse::Block &block) {
+            for (size_t i = 0; i < block.GetRowCount(); ++i) {
+                double equal_hashes = 0;
+                std::string path = std::string(block[0]->As<clickhouse::ColumnString>()->At(i));
+                for (size_t hash_nubmer = 1; hash_nubmer < function_count; hash_nubmer++) {
+                    std::string hash = std::string(block[hash_nubmer]->As<clickhouse::ColumnFixedString>()->At(i));
+                    if (hash == min_hashes[hash_nubmer]) {
+                        equal_hashes++;
+                    }
+                }
+                double equality =  equal_hashes / ( double ) function_count;
+                if (equality >= aim_equality) {
+                    path += " equality (%): ";
+                    path += std::to_string(round(equality * 10000) /100);
+                    path += '\n';
+                    ui->textBrowser->insertPlainText(QString::fromStdString(path));
+                }
+            }
+        });
+    }
+    catch (...) {
+        ui->textBrowser->insertPlainText(QString::fromStdString("Unable to connect to table."));
+    }
     ui->textEdit->clear();
 }
 
