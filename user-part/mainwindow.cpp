@@ -56,8 +56,8 @@ void MainWindow::on_pushButton_clicked()
             for (size_t i = 0; i < block.GetRowCount(); ++i) {
                 double equal_hashes = 0;
                 std::string path = std::string(block[0]->As<clickhouse::ColumnString>()->At(i));
-                for (size_t hash_nubmer = 1; hash_nubmer <= function_count; hash_nubmer++) {
-                    std::string hash = std::string(block[hash_nubmer]->As<clickhouse::ColumnString>()->At(i));
+                for (size_t hash_nubmer = 0; hash_nubmer < function_count; hash_nubmer++) {
+                    std::string hash = std::string(block[hash_nubmer + 1]->As<clickhouse::ColumnFixedString>()->At(i));
                     if (hash == min_hashes[hash_nubmer]) {
                         equal_hashes++;
                     }
@@ -65,16 +65,17 @@ void MainWindow::on_pushButton_clicked()
                 double equality = equal_hashes / ( double ) function_count;
                 if (equality >= aim_equality) {
                     path += " equality (%): ";
-                    path += std::to_string(round(equality * 10000) /100);
+                    path += std::to_string(equality * 100);
                     path += '\n';
                     ui->textBrowser->insertPlainText(QString::fromStdString(path));
                 }
             }
         });
     }
-    catch (...) {
-        ui->textBrowser->insertPlainText(QString::fromStdString("Error while working with table."));
+    catch (const std::exception& e) {
+        ui->textBrowser->insertPlainText(QString::fromStdString(e.what()));
     }
+    ui->textBrowser->insertPlainText(QString::fromStdString("Search ended.\n"));
 }
 
 std::string MainWindow::parse_file(const std::string &inp) {

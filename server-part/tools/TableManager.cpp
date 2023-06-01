@@ -21,7 +21,7 @@ void TableManager::operate_language(const std::string &from_table, const std::st
                             std::to_string(max_len) + " ;";
 
 
-    
+
     size_t counter = 0;
     size_t batch_size = 1000;
 
@@ -61,14 +61,14 @@ void TableManager::operate_language(const std::string &from_table, const std::st
     out_block.AppendColumn("Punctuation", punct_col);
     sender.Insert(to_table, out_block);
 
-    std::cout << "writed " << counter << " rows\n"; 
+    std::cout << "writed " << counter << " rows\n";
 }
 
 std::string TableManager::parse_file(const std::string &path) {
     try {
         std::ifstream file(path);
         if (!file.is_open()) {
-            return "";
+            throw std::exception();
         }
         std::string out;
         std::string line;
@@ -95,7 +95,7 @@ bool TableManager::isPunctuation(char c) {
 // std::string stringToHex(const std::string& input) {
 //     std::stringstream hexStream;
 //     hexStream << std::hex << std::uppercase << std::setfill('0');
-    
+
 //     for (const unsigned char c : input) {
 //         hexStream << std::setw(2) << static_cast<int>(c);
 //     }
